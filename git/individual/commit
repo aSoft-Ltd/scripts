@@ -9,5 +9,4 @@ doAction() {
 	printf "\n\n"
 }
 
-echo $1
 doAction "$1";
