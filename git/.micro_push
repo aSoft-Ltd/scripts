@@ -9,7 +9,7 @@ doAction() {
 	git commit -m 'Before pushing' || echo 'already upto date'
 	git checkout $local_branch
 	echo "==================================================="
-  printf "[%] Pushing $(pwd) $local_branch -> $origin_branch\n"
+  echo "[%] Pushing $(pwd) $local_branch -> $origin_branch"
   echo "==================================================="
 	git push origin $local_branch:$origin_branch $local_branch:$local_branch
 	echo "==================================================="
