@@ -3,10 +3,13 @@
 doAction() {
   msg=$1
   echo "----------------------------------------------------"
+  echo "----------------------------------------------------"
+  echo "PWD: $(pwd)"
+  echo "Message:    $msg"
   git add .
-  echo "Commiting: $msg"
 	git commit -m "$msg" && printf "[\xE2\x9C\x94] Commited\n" || echo '[-] Skipping: Nothing to commit'
-	printf "\n\n"
+	echo "===================================================="
+  printf "\n\n"
 }
 
 doAction "$1";
