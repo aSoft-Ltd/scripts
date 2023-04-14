@@ -1,0 +1,11 @@
+#!/bin/bash
+
+doAction() {
+  msg=$1
+  echo "-----------------------$msg-----------------------------"
+  git add .
+	git commit -m "$msg" || echo '[-] Skipping: Nothing to commit'
+	printf "\n\n"
+}
+
+doAction "$1";

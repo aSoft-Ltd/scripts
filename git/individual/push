@@ -4,9 +4,6 @@ doAction() {
 	local_branch=$1
 	origin_branch=$2
 	echo "----------------------------------------------------"
-#	echo "pwd: $(pwd)"
-#	echo "[%] Pushing:    $local_branch -> $local_branch"
-#  echo "[%] Pushing:    $local_branch -> $origin_branch"
 	git add .
 	git commit -m 'Before pushing' || echo 'already upto date'
 	git checkout $local_branch

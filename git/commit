@@ -8,13 +8,11 @@ usage() {
 }
 
 doAction() {
-	set -xe
 	msg=$1
-	git submodule foreach "git add ."
-	git submodule foreach "git commit -m \"$msg\" || echo 'nothing to commit'"
+	git submodule foreach "../scripts/git/individual/commit -m \"$msg\""
 
-  git add .
-  git commit -m "$msg" || echo 'nothing to commit'
+	echo "Entering $(pwd)"
+  ./scripts/git/individual/commit -m $msg
 }
 
 main() {
