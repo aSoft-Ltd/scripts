@@ -12,7 +12,7 @@ doAction() {
 	local_branch=$1
 	origin_branch=$2
 	git submodule foreach "../scripts/git/.micro_push $local_branch $origin_branch"
-	./.micro_push $local_branch $origin_branch
+	./scripts/git/.micro_push $local_branch $origin_branch
 }
 
 main() {
