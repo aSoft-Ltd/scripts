@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -d "gradle/versions" ]
+then
+  if [ -s "source.txt" ]
+  then
+    echo "[-] Skipped origin version source\n"
+  else
+    rm gradle -rf
+    cp ../versions/gradle gradle -r
+    cp ../versions/gradle.properties .
+    cp ../versions/local.properties .
+    cp ../versions/.gitignore .
+    printf "[\xE2\x9C\x94] gradle updated\n"
+  fi
+else
+  echo "[-] Skipped origin version source\n"
+fi
