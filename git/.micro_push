@@ -3,7 +3,6 @@
 doAction() {
 	local_branch=$1
 	origin_branch=$2
-	printf "\n\n\n"
 	echo "==================================================="
 	echo "[%] Pushing $(pwd) $local_branch -> $origin_branch"
 	echo "==================================================="
@@ -14,6 +13,7 @@ doAction() {
 	echo "==================================================="
 	printf "[\xE2\x9C\x94] Pushed $(pwd) $local_branch -> $origin_branch\n"
 	echo "==================================================="
+	printf "\n\n\n"
 }
 
 doAction $1 $2;
