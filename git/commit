@@ -10,10 +10,10 @@ usage() {
 doAction() {
 	msg=$1
 	echo "MSG: $msg"
-	git submodule foreach "../scripts/git/individual/commit -m \"$msg\""
+	git submodule foreach "../scripts/git/individual/commit \"$msg\""
 
 	echo "Entering $(pwd)"
-  ./scripts/git/individual/commit -m "$msg"
+  ./scripts/git/individual/commit "$msg"
 }
 
 main() {
