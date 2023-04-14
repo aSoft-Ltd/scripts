@@ -5,7 +5,7 @@ doAction() {
   echo "----------------------------------------------------"
   git add .
   echo "Commiting: $msg"
-	git commit -m "$msg" || echo '[-] Skipping: Nothing to commit'
+	git commit -m "$msg" && printf "[\xE2\x9C\x94] Commited\n" || echo '[-] Skipping: Nothing to commit'
 	printf "\n\n"
 }
 
