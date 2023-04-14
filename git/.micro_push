@@ -1,9 +1,9 @@
 #!/bin/bash
 
 doAction() {
-  echo "[%] Pushing $(pwd) $local_branch -> $origin_branch"
 	local_branch=$1
 	origin_branch=$2
+	echo "[%] Pushing $(pwd) $local_branch -> $origin_branch"
 	git add .
 	git commit -m 'Before pushing' || echo 'already upto date'
 	git checkout $local_branch
