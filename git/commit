@@ -9,7 +9,6 @@ usage() {
 
 doAction() {
 	msg=$1
-	echo "MSG: $msg"
 	git submodule foreach "../scripts/git/individual/commit \"$msg\""
 
 	echo "Entering $(pwd)"

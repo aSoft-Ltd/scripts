@@ -2,8 +2,9 @@
 
 doAction() {
   msg=$1
-  echo "-----------------------$msg-----------------------------"
+  echo "----------------------------------------------------"
   git add .
+  echo "Commiting: $msg"
 	git commit -m "$msg" || echo '[-] Skipping: Nothing to commit'
 	printf "\n\n"
 }
