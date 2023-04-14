@@ -4,11 +4,14 @@ doAction() {
 	local_branch=$1
 	origin_branch=$2
 	echo "[%] Pushing $(pwd) $local_branch -> $origin_branch"
+	echo "==================================================="
 	git add .
 	git commit -m 'Before pushing' || echo 'already upto date'
 	git checkout $local_branch
 	git push origin $local_branch:$origin_branch $local_branch:$local_branch
-	printf "[\xE2\x9C\x94] $(pwd) Pushed $local_branch -> $origin_branch\n"
+	echo "==================================================="
+	printf "[\xE2\x9C\x94] Pushed $(pwd) $local_branch -> $origin_branch\n"
+	echo "==================================================="
 }
 
 doAction $1 $2;
