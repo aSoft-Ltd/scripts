@@ -3,6 +3,8 @@
 doAction() {
 	local_branch=$1
 	origin_branch=$2
+	printf "\n\n\n"
+	echo "==================================================="
 	echo "[%] Pushing $(pwd) $local_branch -> $origin_branch"
 	echo "==================================================="
 	git add .
