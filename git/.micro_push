@@ -12,7 +12,7 @@ doAction() {
 	echo "PWD: $(pwd)"
   echo "[%] Pushing: $local_branch -> $origin_branch"
 	git push origin $local_branch:$origin_branch $local_branch:$local_branch
-	printf "[\xE2\x9C\x94] Pushed $(pwd) $local_branch -> $origin_branch\n"
+	printf "[\xE2\x9C\x94] Pushed\n"
 	echo "==================================================="
 	printf "\n\n"
 }
