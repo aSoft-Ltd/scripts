@@ -8,11 +8,14 @@ doAction() {
 	git add .
 	git commit -m 'Before pushing' || echo 'already upto date'
 	git checkout $local_branch
+	echo "==================================================="
+  printf "[\xE2\x9C\x94] Pushed $(pwd) $local_branch -> $origin_branch\n"
+  echo "==================================================="
 	git push origin $local_branch:$origin_branch $local_branch:$local_branch
 	echo "==================================================="
 	printf "[\xE2\x9C\x94] Pushed $(pwd) $local_branch -> $origin_branch\n"
 	echo "==================================================="
-	printf "\n\n\n"
+	printf "\n\n"
 }
 
 doAction $1 $2;
