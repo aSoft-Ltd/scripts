@@ -11,10 +11,10 @@ usage() {
 doAction() {
 	local_branch=$1
 	origin_branch=$2
-	git submodule foreach "../scripts/git/.micro_push $local_branch $origin_branch"
+	git submodule foreach "../scripts/git/individual/push $local_branch $origin_branch"
 
 	echo "Entering $(pwd)"
-	./scripts/git/.micro_push $local_branch $origin_branch
+	./scripts/git/individual/push $local_branch $origin_branch
 }
 
 main() {
