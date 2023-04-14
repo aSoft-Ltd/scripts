@@ -8,4 +8,4 @@ doAction() {
 	printf "\n\n"
 }
 
-doAction $1;
+doAction "$1";
