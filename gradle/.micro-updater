@@ -7,7 +7,8 @@ then
     echo "[-] Skipped origin version source\n"
   else
     rm gradle -rf
-    cp ../versions/gradle gradle -r
+    mkdir gradle
+    cp ../versions/gradle/wrapper gradle -r
     cp ../versions/gradle.properties .
     cp ../versions/local.properties .
     cp ../versions/.gitignore .
