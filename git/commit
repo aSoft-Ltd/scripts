@@ -9,7 +9,7 @@ usage() {
 
 doAction() {
 	msg=$1
-	./gradle updateReadMe && ./gradle dokkaHtmlMultiModule || echo "Not a gradle module"
+	./gradlew updateReadMe && ./gradlew dokkaHtmlMultiModule || echo "Not a gradle module"
 	git submodule foreach "../scripts/git/individual/commit \"$msg\""
 
 	echo "Entering $(pwd)"
