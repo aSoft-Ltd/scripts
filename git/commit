@@ -2,7 +2,7 @@
 
 usage() {
 	echo "Submodule commiter"
-	echo "Usage: ./scripts/commit <commit-message>"
+	echo "Usage: ./scripts/git/commit <commit-message>"
 	echo "    examples"
 	echo "    - ./scripts/commit 'my very greate commit message'"
 }

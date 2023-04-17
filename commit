@@ -27,3 +27,7 @@ main() {
 }
 
 main "$1";
+
+echo "DEPRECATED"
+echo "/scripts/commit has been depricated"
+echo "/scripts/git/commit"
