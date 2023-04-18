@@ -2,7 +2,7 @@
 
 set -xe
 main() {
-	git submodule foreach '../scripts/gradle/.micro-updater'
+	git submodule foreach '../scripts/gradle/individual/update'
 }
 
 main "$1";

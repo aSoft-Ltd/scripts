@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ -d "gradle/versions" ]
+if [ -s "source.txt" ]
 then
-  if [ -s "source.txt" ]
+  echo "[-] Skipped origin version source\n"
+else
+  if [ -d "gradle/wrapper" ]
   then
-    echo "[-] Skipped origin version source\n"
-  else
     rm gradle -rf
     mkdir gradle
     cp ../versions/gradle/wrapper gradle -r
@@ -13,7 +13,7 @@ then
     cp ../versions/local.properties .
     cp ../versions/.gitignore .
     printf "[\xE2\x9C\x94] gradle updated\n"
+  else
+    echo "[-] Skipping a non gradle module"
   fi
-else
-  echo "[-] Skipped origin version source\n"
 fi
