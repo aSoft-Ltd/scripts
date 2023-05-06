@@ -14,7 +14,7 @@ doAction() {
     git fetch origin $origin_branch
     echo "[%] Merging:    $origin_branch -> $local_branch"
     git push origin $local_branch:$origin_branch $local_branch:$local_branch
-    printf "[\xE2\x9C\x94] Pushed\n"
+    printf "[\xE2\x9C\x94] Merged\n"
     echo "===================================================="
     printf "\n\n"
     git merge origin/$origin_branch
