@@ -2,10 +2,10 @@
 
 usage() {
 	echo "Submodule updater"
-	echo "Usage: ./scripts/update <branch-name>"
+	echo "Usage: ./scripts/git/update <branch-name>"
 	echo "    examples"
-	echo "    - ./scripts/update dev-george"
-	echo "    - ./scripts/update dev-andy"
+	echo "    - ./scripts/git/update dev-george"
+	echo "    - ./scripts/git/update dev-andy"
 }
 
 doAction() {

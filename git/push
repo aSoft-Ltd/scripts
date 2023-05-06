@@ -4,8 +4,8 @@ usage() {
 	echo "Submodule pusher"
 	echo "Usage: ./scripts/git/push <local-branch> <origin-branch>"
 	echo "    examples"
-	echo "    - ./scripts/push dev-george main"
-	echo "    - ./scripts/push dev-andy main"
+	echo "    - ./scripts/git/push dev-george main"
+	echo "    - ./scripts/git/push dev-andy main"
 }
 
 doAction() {
