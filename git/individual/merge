@@ -1,0 +1,23 @@
+#!/bin/bash
+
+doAction() {
+  	local_branch=$1
+  	origin_branch=$2
+  	echo "----------------------------------------------------"
+  	git add .
+    git commit -m "Before auto merging $origin_branch" || echo 'already upto date'
+    git checkout $local_branch || git checkout -b $local_branch || echo "already in branch $local_branch"
+    git commit -m "Before auto fetching $origin_branch" || echo 'already upto date'
+    echo "----------------------------------------------------"
+    echo "PWD: $(pwd)"
+    echo "[%] Fetching:    $origin_branch -> $local_branch"
+    git fetch origin $origin_branch
+    echo "[%] Merging:    $origin_branch -> $local_branch"
+    git push origin $local_branch:$origin_branch $local_branch:$local_branch
+    printf "[\xE2\x9C\x94] Pushed\n"
+    echo "===================================================="
+    printf "\n\n"
+    git merge origin/$origin_branch
+}
+
+doAction $1 $2;
