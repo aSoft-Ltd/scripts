@@ -1,0 +1,18 @@
+#!/bin/bash
+
+main() {
+  command="$1"
+  if [ -s "source.txt" ]
+  then
+    echo "[-] Skipped origin version source\n"
+  else
+    if [ -d "gradle/wrapper" ]
+    then
+      ./gradlew wrapper $command || echo "[x] Failed"
+    else
+      echo "[-] Skipping a non gradle module"
+    fi
+  fi
+}
+
+main "$1"

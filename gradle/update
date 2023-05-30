@@ -1,8 +1,5 @@
 #!/bin/bash
 
 set -xe
-main() {
-	git submodule foreach '../scripts/gradle/individual/update'
-}
 
-main "$1";
+git submodule foreach '../scripts/gradle/individual/update'
