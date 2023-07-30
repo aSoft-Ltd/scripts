@@ -35,7 +35,7 @@ doAction() {
 
 main() {
 	local_branch=$1;
-  origin_branch=$2;
+  	origin_branch=$2;
   if [[ -z "$local_branch" ]]; then
 		usage
 	elif [[ -z "$origin_branch" ]]; then
