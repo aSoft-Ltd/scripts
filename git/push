@@ -8,9 +8,25 @@ usage() {
 	echo "    - ./scripts/git/push dev-andy main"
 }
 
+checkBranch() {
+	branch=$1
+	git submodule foreach "../scripts/git/individual/check_branch \"$branch\""
+	if [ $? -ne 0 ]; then
+		exit 1
+	else
+		./scripts/git/individual/check_branch "$branch"
+		if [ $? -ne 0 ]; then
+			exit 1
+		else
+			echo "Done checking branch"
+		fi
+	fi
+}
+
 doAction() {
 	local_branch=$1
 	origin_branch=$2
+	checkBranch $local_branch
 	git submodule foreach "../scripts/git/individual/push $local_branch $origin_branch"
 
 	echo "Entering $(pwd)"

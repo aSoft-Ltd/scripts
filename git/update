@@ -8,10 +8,26 @@ usage() {
 	echo "    - ./scripts/git/update dev-andy"
 }
 
+checkBranch() {
+	branch=$1
+	git submodule foreach "../scripts/git/individual/check_branch \"$branch\""
+	if [ $? -ne 0 ]; then
+		exit 1
+	else
+		./scripts/git/individual/check_branch "$branch"
+		if [ $? -ne 0 ]; then
+			exit 1
+		else
+			echo "Done checking branch"
+		fi
+	fi
+}
+
 doAction() {
 	set -xe
 	branch=$1
 	tmp="tmp"
+	checkBranch $branch
 	git submodule foreach "git add ."
 	git submodule foreach "git commit -m 'Synchronizing all submodules' || echo 'already upto date'"
 	git submodule foreach "git checkout $branch || git checkout -b $branch || echo 'already in branch $branch'"

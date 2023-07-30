@@ -12,7 +12,7 @@ doAction() {
 	git submodule foreach "../scripts/git/individual/commit \"$msg\""
 
 	echo "Entering $(pwd)"
-  ./scripts/git/individual/commit "$msg"
+	./scripts/git/individual/commit "$msg"
 }
 
 main() {

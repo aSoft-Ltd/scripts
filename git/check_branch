@@ -1,0 +1,34 @@
+#!/bin/bash
+
+usage() {
+	echo "Submodule branch checker"
+	echo "Usage: ./scripts/git/check_branch <branch_name>"
+	echo "    examples"
+	echo "    - ./scripts/git/check_branch 'dev-andy"
+}
+
+doAction() {
+	branch=$1
+	git submodule foreach "../scripts/git/individual/check_branch \"$branch\""
+	if [ $? -ne 0 ]; then
+		exit 1
+	else
+		./scripts/git/individual/check_branch "$branch"
+		if [ $? -ne 0 ]; then
+			exit 1
+		else
+			echo "Done checking branch"
+		fi
+	fi
+}
+
+main() {
+	msg=$1;
+	if [[ -z "$msg" ]]; then
+		usage
+	else
+		doAction "$msg"
+	fi
+}
+
+main "$1";
