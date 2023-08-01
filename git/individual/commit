@@ -1,14 +1,14 @@
 #!/bin/bash
 
 doAction() {
-  msg=$1
-  echo "----------------------------------------------------"
-  echo "PWD: $(pwd)"
-  echo "Message:    $msg"
-  git add .
+	msg=$1
+	echo "----------------------------------------------------"
+	echo "PWD: $(pwd)"
+	echo "Message:    $msg"
+	git add .
 	git commit -m "$msg" && printf "[\xE2\x9C\x94] Commited\n" || echo '[-] Skipping: Nothing to commit'
 	echo "===================================================="
-  printf "\n\n"
+	printf "\n\n"
 }
 
 doAction "$1";
