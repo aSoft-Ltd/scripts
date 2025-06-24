@@ -6,9 +6,10 @@ then
 else
   if [ -d "gradle/wrapper" ]
   then
-    rm gradle -rf
+    rm -rf graddle
     mkdir gradle
-    cp ../versions/gradle/wrapper gradle -r
+    cp -r ../versions/gradle/wrapper gradle
+    cp ../version/gradle/gradle-wrapper.properties gradle/wrapper/gradle-wrapper.properties
     cp ../versions/gradle.properties .
     cp ../versions/local.properties .
     cp ../versions/.gitignore .
